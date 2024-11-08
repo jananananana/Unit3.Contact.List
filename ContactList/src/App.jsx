@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ContactList from './components/ContactList'
+import SelectedContact from './components/SelectedContact'
 import './App.css'
 
 
@@ -8,7 +9,7 @@ function App() {
 
   return (
     <>
-      {selectedContactId === null ? <ContactList /> : <SelectedContact>}
+      {selectedContactId === null ? <ContactList setSelectedContactId={setSelectedContactId} /> : <SelectedContact setSelectedContactId={setSelectedContactId} contact={selectedContactId} />}
     </>
   )
 }
